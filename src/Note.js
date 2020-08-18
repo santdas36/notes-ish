@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./Note.css";
 
 function Note({ todo }) {

@@ -5,7 +5,7 @@ function App() {
   const [todos, setTodos] = useState(['one', 'two', 'three']);
   const [inputVal, setInputVal] = useState('');
   const handleAdd = () => {
-    setTodos(...todos, inputVal);
+    setTodos([...todos, inputVal]);
   }
   return (
     <div className="app">

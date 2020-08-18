@@ -45,7 +45,7 @@ padding-bottom: 5rem;
   transition: all 0.2s ease-in-out;
    backdrop-filter: blur(1rem);
  }
-  .note__submit {
+  .app__submit {
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.5);
 }
  button:hover, button:focus {
@@ -80,7 +80,7 @@ padding-bottom: 5rem;
  textarea::-webkit-scrollbar {
 display: none;
  }
- .note__submit {
+ .app__submit {
  margin-top: 1rem;
  width: 50%;
  align-self: flex-end;
@@ -104,7 +104,7 @@ display: none;
 padding: 3rem;
 }
  .note {
-flex: 0.5;
+flex: 50%;
 margin-right: 1rem;
 padding: 5rem 2rem 1rem 2rem;
 }

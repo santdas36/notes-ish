@@ -4,6 +4,9 @@ margin: 0 auto;
 padding-bottom: 5rem;
  overflow-y: scroll;
 }
+.app__logo {
+height: 3rem;
+}
  .app__header{
  display: flex;
  align-items: center;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;900&display=swap');
 
 body {
   margin: 0;
@@ -6,8 +6,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  padding: 1.5rem;
+  background-color: #4a4a4a;
+  background-image: url(./bg.webp);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: "Work Sans", sans-serif;
 }
-
 body::-webkit-scrollbar {
-  display: none;
+   display: none;
 }

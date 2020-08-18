@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./bootstrap-reboot.css";
 import "./App.css";
 import Note from "./Note";
 

@@ -30,6 +30,9 @@
 .note__edit {
 margin-right: 0.33rem;
 }
+.note__content {
+'font-size: 1.15rem;
+}
 @media (min-width: 600px) {
   .note {
 flex: calc(50% - 1rem);

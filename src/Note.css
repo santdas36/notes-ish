@@ -28,7 +28,7 @@
  margin-top: 2rem;
  } 
 .note__edit {
-margin-right: 0.5rem;
+margin-right: 0.33rem;
 }
 @media (min-width: 600px) {
   .note {

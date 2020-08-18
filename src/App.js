@@ -7,7 +7,7 @@ function App() {
   const [inputVal, setInputVal] = useState('');
   const handleAdd = (event) => {
 	event.preventDefault();
-	if (!inputVal) {
+	if (inputVal) {
      	setTodos([...todos, inputVal]);
 		setInputVal('');
 	}

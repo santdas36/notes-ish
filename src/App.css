@@ -33,7 +33,7 @@ padding-bottom: 5rem;
    backdrop-filter: blur(1rem);
  }
   .app__submit {
- background: rgba(255, 255, 255, 0.2);
+ background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.5);
 }
  button:hover, button:focus {
@@ -56,7 +56,7 @@ padding-bottom: 5rem;
  border-bottom: 1.5rem solid transparent;
  border-left: 1.5rem solid transparent;
  border-right: 1.5rem solid transparent;
- font-size: 1rem;
+ font-size: 1.12rem;
  resize: none;
  height: 10rem;
   border-radius: 1rem;

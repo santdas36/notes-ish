@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="app">
     		<div class="app__header">
-			<img ocClick={login} src={logo} className="app__logo" />
+			<img onClick={login} src={logo} className="app__logo" />
 			<div class="app__avatar"></div>
 		</div>
 		<div class="app__input">

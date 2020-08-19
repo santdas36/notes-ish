@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Note from "./Note";
-import { db, auth, provider } from "./firebase";
+import db, { auth, provider } from "./firebase";
 
 function App() {
   const [todos, setTodos] = useState([]);

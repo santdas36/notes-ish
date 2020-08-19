@@ -20,19 +20,20 @@ function App() {
 	}
   }
   return (
-    {!user ? (
-    <div className="app">
-    		<div class="app__header">
+  <div className="main">
+   {!user ? (
+	<div className="app">
+    		<div className="app__header">
 			<img onClick={login} src={logo} className="app__logo" />
-			<div class="app__avatar"></div>
+			<div className="app__avatar"></div>
 		</div>
-		<div class="app__input">
+		<div className="app__input">
 			<form>
 				<textarea value={inputVal} onChange={(event) => (setInputVal(event.target.value))} placeholder="Write here..."></textarea>
-				<button class="app__submit" onClick={handleAdd} type="submit">Add to Notes</button>
+				<button className="app__submit" onClick={handleAdd} type="submit">Add to Notes</button>
 			</form>
 		</div>
-		<div class="app__notes">
+		<div className="app__notes">
 		{ notes?.map((note) => (
 			<Note note={note} />
 		))}
@@ -42,8 +43,9 @@ function App() {
 	<div className="login">
 		<button onClick={signin}>Sign In with Google</button>
 	</div>
-	)
-  });
+	)}
+	</div>
+);
 }
 
 export default App;

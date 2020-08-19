@@ -8,6 +8,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
   const [user, setUser] = useState(null);
+
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
 	console.log('usr>>', user);
@@ -22,7 +23,7 @@ function App() {
   }
   return (
   <div className="main">
-   {!user ? (
+   {user ? (
 	<div className="app">
     		<div className="app__header">
 			<img src={logo} className="app__logo" />

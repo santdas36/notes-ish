@@ -10,6 +10,7 @@ function App() {
   const [user, setUser] = useState({});
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
+	console.log(user);
   };
 
   const handleAdd = (event) => {

@@ -5,21 +5,22 @@ import Note from "./Note";
 import db, { auth, provider } from "./firebase";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
-
-  const login = () => {
-    auth.signInWithPopup(provider).then((result) => console.log(result)).catch((err) => alert(err.message));
+  const [user, setUser] = useState({});
+  const signin = () => {
+    auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
   };
 
   const handleAdd = (event) => {
 	event.preventDefault();
 	if (inputVal) {
-     	setTodos([...todos, inputVal]);
+     	setNotes([...notes, inputVal]);
 		setInputVal('');
 	}
   }
   return (
+    {!user ? (
     <div className="app">
     		<div class="app__header">
 			<img onClick={login} src={logo} className="app__logo" />
@@ -32,12 +33,17 @@ function App() {
 			</form>
 		</div>
 		<div class="app__notes">
-		{ todos?.map((todo) => (
-			<Note todo={todo} />
+		{ notes?.map((note) => (
+			<Note note={note} />
 		))}
 		</div>
-    </div>
-  );
+    </div> )
+	: (
+	<div className="login">
+		<button onClick={signin}>Sign In with Google</button>
+	</div>
+	)
+  });
 }
 
 export default App;

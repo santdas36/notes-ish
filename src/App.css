@@ -1,4 +1,13 @@
-  .app {
+.login {
+display: grid;
+place-items: center;
+padding: 3rem;
+}
+.login__button {
+font-size: 1.2rem;
+padding: 0.66rem 1.33rem;
+}
+.app {
 max-width: 960px;
 margin: 0 auto;
 padding-bottom: 5rem;

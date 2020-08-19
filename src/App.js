@@ -24,7 +24,7 @@ function App() {
    {!user ? (
 	<div className="app">
     		<div className="app__header">
-			<img onClick={login} src={logo} className="app__logo" />
+			<img src={logo} className="app__logo" />
 			<div className="app__avatar"></div>
 		</div>
 		<div className="app__input">

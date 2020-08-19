@@ -7,7 +7,7 @@ import db, { auth, provider } from "./firebase";
 function App() {
   const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
 	console.log('usr>>', user);

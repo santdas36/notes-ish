@@ -11,22 +11,20 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    let localUser = sessionStorage.getItem('localUser');
+    let localUser = JSON.parse(sessionStorage.getItem('localUser'));
     if (localUser) setUser(localUser);
-	setTimeout(() => {
-    		if (user) {
-      	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
-	  	   setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
-			console.log(snapshot.docs[0].data());
-     	 });
-      }}, 100);
+    if (user) {
+    	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
+		setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
+		console.log(snapshot.docs[0].data());
+      });
+    }
   }, [user]);
 
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => {
 		setUser(result.user);
-		sessionStorage.setItem('localUser', result.user);
-		console.log(result.user);
+		sessionStorage.setItem('localUser', JSON.stringify(result.user));
 	}).catch((err) => alert(err.message));
   };
 

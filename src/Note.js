@@ -8,7 +8,7 @@ function Note({ note, uid, id }) {
 		<div className="note">
 			<div className="note__header">
 				<button className="note__edit">Edit</button>
-				<button className="note__delete" onClick={event => db.collection('users').doc({uid}).collection('notes').doc({id}).delete()}>Delete</button>
+				<button className="note__delete" onClick={event => db.collection('users').doc(uid).collection('notes').doc(id).delete()}>Delete</button>
 			</div>
 			<div className="note__body">
 				<h2 className="note__title">{note.note}</h2>

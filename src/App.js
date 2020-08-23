@@ -6,7 +6,7 @@ import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([{}]);
   const [inputVal, setInputVal] = useState('');
   const [user, setUser] = useState(null);
 

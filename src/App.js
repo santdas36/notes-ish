@@ -11,8 +11,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   const signin = () => {
-    auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
-	console.log('usr>>', user);
+    auth.signInWithPopup(provider).then((result) => {setUser(result); console.log(user); }).catch((err) => alert(err.message));
   };
 
   const handleAdd = (event) => {

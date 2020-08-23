@@ -9,9 +9,9 @@ function Note({ note }) {
 				<button className="note__delete">Delete</button>
 			</div>
 			<div className="note__body">
-				<h2 className="note__title">title</h2>
-				<p className="note__content">{note}</p>
-				<p className="note__time">2.40pm Saturday</p>
+				<h2 className="note__title">{note.note}</h2>
+				<p className="note__content">note</p>
+				<p className="note__time">{note.time}</p>
 			</div>
 			<div className="note__footer">
 				<button className="note__save">Save</button>

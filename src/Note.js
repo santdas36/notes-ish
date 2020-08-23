@@ -23,7 +23,7 @@ function Note({ note, uid, id }) {
 			</div>
 			<div className="note__body">
 				<h2 className="note__title" contenteditable={editable}>{note.note}</h2>
-				<p className="note__content" contenteditable="true">note</p>
+				<p className="note__content" contenteditable={!editable}>note</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<div className="note__footer">

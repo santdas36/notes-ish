@@ -13,15 +13,13 @@ function App() {
   useEffect(() => {
     let localUser = sessionStorage.getItem('localUser');
     if (localUser) setUser(localUser);
-  }, []);
-
-  useEffect(() => {
-    if (user) {
-      db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
-	     setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
-		console.log(snapshot.docs[0].data());
-      })
-    }
+	setTimeout(() => {
+    		if (user) {
+      	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
+	  	   setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
+			console.log(snapshot.docs[0].data());
+     	 });
+      }}, 100);
   }, [user]);
 
   const signin = () => {

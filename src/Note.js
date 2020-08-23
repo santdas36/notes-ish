@@ -12,7 +12,7 @@ function Note({ note, uid, id }) {
 	}
 
 	const handleSave = () => {
-		setEditable(false);
+		setEditable(true);
 	}
 
 	return (

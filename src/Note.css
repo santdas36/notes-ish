@@ -9,7 +9,7 @@
  transition: all 0.2s ease-in;
  }
   .note:hover {
-   box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.5);
+   box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.33);
 }
 
  .note__header {

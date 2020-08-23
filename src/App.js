@@ -11,6 +11,11 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    let localUser = sessionStorage.get('localUser');
+    if (localUser) setUser(localUser);
+  }, []);
+
+  useEffect(() => {
     if (user) {
       db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
 	     setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
@@ -20,7 +25,10 @@ function App() {
   }, [user]);
 
   const signin = () => {
-    auth.signInWithPopup(provider).then((result) => setUser(result.user)).catch((err) => alert(err.message));
+    auth.signInWithPopup(provider).then((result) => {
+		setUser(result.user);
+		sessionStorage.set('localUser', result.user);
+	}).catch((err) => alert(err.message));
   };
 
   const handleAdd = (event) => {

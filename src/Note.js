@@ -6,7 +6,7 @@ import db from "./firebase";
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState(false);
 	const [title, setTitle] = useState('');
-
+	console.log('yo >>>',editable);
 	const handleDelete = () => {
 		db.collection('users').doc(uid).collection('notes').doc(id).delete();
 	}

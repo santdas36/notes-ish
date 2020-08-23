@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Note from "./Note";
@@ -9,6 +9,12 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    db.collection('users').doc(user?.uid).collection('notes').onSnapshot((snapshot) => {
+	  setNotes(snapshot.docs.map((doc) => doc.data.note));
+    })
+  }, [user]);
 
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => setUser(result.user)).catch((err) => alert(err.message));

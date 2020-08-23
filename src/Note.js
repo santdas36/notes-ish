@@ -11,10 +11,14 @@ function Note({ note, uid, id }) {
 		db.collection('users').doc(uid).collection('notes').doc(id).delete();
 	}
 
+	const handleDelete = () => {
+		setEditable(null);
+	}
+
 	return (
 		<div className="note">
 			<div className="note__header">
-				<button className="note__edit" onClick={() => setEdit(true)}>Edit</button>
+				<button className="note__edit" onClick={() => setEditable(true)}>Edit</button>
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
@@ -23,7 +27,7 @@ function Note({ note, uid, id }) {
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<div className="note__footer">
-				<button className="note__save">Save</button>
+				<button className="note__save" onClick={handleSave}>Save</button>
 			</div>
 		</div>	
 	);

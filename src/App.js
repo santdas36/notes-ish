@@ -6,14 +6,14 @@ import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
 
 function App() {
-  const [notes, setNotes] = useState([{}]);
+  const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     if (user) {
       db.collection('users').doc(user.uid).collection('notes').onSnapshot((snapshot) => {
-	     snapshot.docs.map((doc) => setNotes(notes => [...notes, doc.data()]));
+	     snapshot.docs.map((doc) => setNotes(doc.data()));
 		console.log(snapshot.docs[0].data());
       })
     }

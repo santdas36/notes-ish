@@ -11,7 +11,7 @@ function Note({ note }) {
 			<div className="note__body">
 				<h2 className="note__title">{note.note}</h2>
 				<p className="note__content">note</p>
-				<p className="note__time">{note.time}</p>
+				<p className="note__time">{new Date(note.note}</p>
 			</div>
 			<div className="note__footer">
 				<button className="note__save">Save</button>

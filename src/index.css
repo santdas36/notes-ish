@@ -5,7 +5,7 @@ body {
   font-size: 16px;
   padding: 1.5rem;
   background-color: #222;
-  background-image: linear-gradient(to right bottom, #666, #444);
+  background-image: linear-gradient(to right bottom, #525252, #2a2a2a);
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;

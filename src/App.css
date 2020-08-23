@@ -24,7 +24,7 @@ height: 1.5rem;
  .app__avatar {
  width: 3rem;
  height: 3rem;
- background: rgba(255, 255, 255, 0.25);
+ background: rgba(255, 255, 255, 0.1);
  border-radius: 50%;
  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
  }
@@ -34,7 +34,7 @@ height: 1.5rem;
  }
 
  textarea, button {
- background: rgba(255, 255, 255, 0.25);
+ background: rgba(255, 255, 255, 0.1);
  border-radius: 0.5rem;
  border: none;
  padding: 0.5rem 1rem;
@@ -44,7 +44,7 @@ height: 1.5rem;
   transition: all 0.2s ease-in-out;
  }
   .app__submit {
- background: rgba(255, 255, 255, 0.33);
+ background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
 }
  button:hover, button:focus {
@@ -71,7 +71,7 @@ height: 1.5rem;
  resize: none;
  height: 10rem;
   border-radius: 1rem;
-    box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
+  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
  }
  textarea:focus {
    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.15);

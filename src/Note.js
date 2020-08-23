@@ -11,7 +11,7 @@ function Note({ note, uid, id }) {
 		db.collection('users').doc(uid).collection('notes').doc(id).delete();
 	}
 
-	const handleDelete = () => {
+	const handleSave = () => {
 		setEditable(null);
 	}
 

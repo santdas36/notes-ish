@@ -26,6 +26,7 @@ function App() {
     auth.signInWithPopup(provider).then((result) => {
 		setUser(result.user);
 		sessionStorage.setItem('localUser', result.user);
+		console.log(result.user);
 	}).catch((err) => alert(err.message));
   };
 

@@ -6,6 +6,8 @@ body {
   padding: 1.5rem;
   background-color: #222;
   background-image: linear-gradient(to right bottom, #4facfe 0%, #00f2fe 100%);
+  background-size: cover;
+  background-attachment: fixed;
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
 }

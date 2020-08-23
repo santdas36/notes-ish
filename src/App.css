@@ -45,7 +45,7 @@ height: 1.5rem;
  }
   .app__submit {
  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.5);
+  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.1);
 }
  button:hover, button:focus {
  background: rgba(0, 0, 0, 0.5);
@@ -71,10 +71,10 @@ height: 1.5rem;
  resize: none;
  height: 10rem;
   border-radius: 1rem;
-    box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.5);
+    box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.1);
  }
  textarea:focus {
-   box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.5);
+   box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.1);
 }
  textarea::-webkit-scrollbar {
 display: none;

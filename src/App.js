@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    let localUser = sessionStorage.getItem('localUser');
+    let localUser = localStorage.getItem('localUser');
     if (localUser) setUser(JSON.parse(localUser));
   }, []);
 
@@ -27,8 +27,13 @@ function App() {
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => {
 		setUser(result.user);
-		sessionStorage.setItem('localUser', JSON.stringify(result.user));
+		localStorage.setItem('localUser', JSON.stringify(result.user));
 	}).catch((err) => alert(err.message));
+  };
+
+  const signout = () => {
+	setUser(null);
+	localStorage.setItem('localUser', null);
   };
 
   const handleAdd = (event) => {
@@ -47,7 +52,7 @@ function App() {
    {user ? (
 	<div className="app">
     		<div className="app__header">
-			<img src={logo} className="app__logo" />
+			<img src={logo} onClick={signout} className="app__logo" />
 			<div className="app__avatar"></div>
 		</div>
 		<div className="app__input">

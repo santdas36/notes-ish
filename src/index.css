@@ -5,12 +5,11 @@ body {
   font-size: 16px;
   padding: 1.5rem;
   background-color: #222;
-  background-image: url('https://source.unsplash.com/collection/416021');
+  background-image: linear-gradient(to right bottom, #666, #444);
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
-  backdrop-filter: blur(3px);
 }
 body::-webkit-scrollbar {
    display: none;

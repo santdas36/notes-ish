@@ -4,7 +4,7 @@ import formatTime from "./formatTime.js";
 import db from "./firebase";
 
 function Note({ note, uid, id }) {
-	const [editable, setEditable] = useState(null);
+	const [editable, setEditable] = useState(false);
 	const [title, setTitle] = useState('');
 
 	const handleDelete = () => {
@@ -12,7 +12,7 @@ function Note({ note, uid, id }) {
 	}
 
 	const handleSave = () => {
-		setEditable(null);
+		setEditable(false);
 	}
 
 	return (
@@ -23,7 +23,7 @@ function Note({ note, uid, id }) {
 			</div>
 			<div className="note__body">
 				<h2 className="note__title" contenteditable={editable}>{note.note}</h2>
-				<p className="note__content">note</p>
+				<p className="note__content" contenteditable="true">note</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<div className="note__footer">

@@ -14,7 +14,7 @@ function App() {
     db.collection('users').doc(user?.uid).collection('notes').onSnapshot((snapshot) => {
 	  setNotes(snapshot.docs.map((doc) => doc.data.note));
     })
-  }, [user]);
+  }, []);
 
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => setUser(result.user)).catch((err) => alert(err.message));

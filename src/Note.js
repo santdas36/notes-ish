@@ -16,7 +16,7 @@ function Note({ note, uid, id }) {
 	}
 
 	return (
-		<div className={editable ? "note isEditable" : "note"}>
+		<div className="note { (editable === 'true') && 'isEditable' } ">
 			<div className="note__header">
 				<button className="note__edit" onClick={() => setEditable("true")}>Edit</button>
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
@@ -26,7 +26,7 @@ function Note({ note, uid, id }) {
 				<p className="note__content" contenteditable={editable}>note</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
-			{editable && (<div className="note__footer">
+			{editable === "true" && (<div className="note__footer">
 				<button className="note__save" onClick={handleSave}>Save</button>
 			</div>)}
 		</div>	

@@ -10,6 +10,7 @@ body {
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
+  backdrop-filter: blur(3px);
 }
 body::-webkit-scrollbar {
    display: none;

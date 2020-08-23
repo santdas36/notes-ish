@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     if (user) {
       db.collection('users').doc(user.uid).collection('notes').onSnapshot((snapshot) => {
-	    setNotes(snapshot.docs.map((doc) => doc.data()));
+	    setNotes(snapshot.docs.map((doc) => doc.data().note));
 		console.log(snapshot.docs[0].data());
       })
     }

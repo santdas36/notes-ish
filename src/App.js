@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   const signin = () => {
-    auth.signInWithPopup(provider).then((result) => setUser(result)).catch((err) => alert(err.message));
+    auth.signInWithPopup(provider).then((result) => setUser(result.user)).catch((err) => alert(err.message));
   };
 
   const handleAdd = (event) => {
@@ -19,7 +19,7 @@ function App() {
 	if (inputVal && user) {
 		setInputVal('');
 		console.log(user);
-    		db.collection('users').doc(user.id).collection('notes').add({
+    		db.collection('users').doc(user.uid).collection('notes').add({
       		note: inputVal,
 			time: firebase.firestore.FieldValue.serverTimestamp(),
     		});

@@ -12,11 +12,11 @@ function Note({ note, uid, id }) {
 	}
 
 	const handleSave = () => {
-		setEditable("true");
+		setEditable("false");
 	}
 
 	return (
-		<div className="note">
+		<div className="note {(editable === "true") && editable}">
 			<div className="note__header">
 				<button className="note__edit" onClick={() => setEditable("true")}>Edit</button>
 				<button className="note__delete" onClick={handleDelete}>Delete</button>

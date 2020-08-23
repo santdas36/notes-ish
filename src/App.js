@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Note from "./Note";
+import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
 
 function App() {
@@ -16,9 +17,12 @@ function App() {
 
   const handleAdd = (event) => {
 	event.preventDefault();
-	if (inputVal) {
-     	setNotes([...notes, inputVal]);
+	if (inputVal && user) {
 		setInputVal('');
+    		db.collection('users').doc(user.id).collection('notes').add({
+      		note: inputVal,
+			time: firebase.firestore.FieldValue.serverTimestamp(),
+    		});
 	}
   }
   return (

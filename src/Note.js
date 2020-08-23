@@ -13,7 +13,7 @@ function Note({ note, uid, id }) {
 			<div className="note__body">
 				<h2 className="note__title">{note.note}</h2>
 				<p className="note__content">note</p>
-				<p className="note__time">{ formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
+				<p className="note__time">{ formatTime('%l:%M%P - %b %d', new Date(note.time?.toDate())) }</p>
 			</div>
 			<div className="note__footer">
 				<button className="note__save">Save</button>

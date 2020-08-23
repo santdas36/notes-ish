@@ -4,10 +4,8 @@ body {
   margin: 0;
   font-size: 16px;
   padding: 1.5rem;
-  background-color: #4a4a4a;
-  background-image: url(./bg.webp);
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #222;
+  background-image: linear-gradient(to right bottom, #4facfe 0%, #00f2fe 100%);
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
 }

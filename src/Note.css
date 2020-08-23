@@ -7,7 +7,6 @@
  position: relative;
  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.5);
  transition: all 0.2s ease-in;
-  backdrop-filter: blur(1rem);
  }
   .note:hover {
    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.5);

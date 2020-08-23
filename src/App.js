@@ -52,8 +52,8 @@ function App() {
    {user ? (
 	<div className="app">
     		<div className="app__header">
-			<img src={logo} onClick={signout} className="app__logo" />
-			<div className="app__avatar"></div>
+			<img src={logo} className="app__logo" />
+			<div onClick={signout} className="app__avatar"></div>
 		</div>
 		<div className="app__input">
 			<form>

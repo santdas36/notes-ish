@@ -1,3 +1,4 @@
+import React from "react";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 

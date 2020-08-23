@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     if (user) {
       db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
-	     setNotes(snapshot.docs.map((doc) => doc.data()));
+	     setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
 		console.log(snapshot.docs[0].data());
       })
     }
@@ -50,7 +50,7 @@ function App() {
 		</div>
 		<div className="app__notes">
 		{ notes?.map((note) => (
-			<Note note={note} />
+			<Note uid={user?.uid} id={note.id} note={note.data} />
 		))}
 		</div>
     </div> )

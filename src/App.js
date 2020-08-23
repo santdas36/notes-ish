@@ -13,6 +13,9 @@ function App() {
   useEffect(() => {
     let localUser = sessionStorage.getItem('localUser');
     if (localUser) setUser(JSON.parse(localUser));
+  }, []);
+
+  useEffect(() => {
     if (user) {
     	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
 		setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));

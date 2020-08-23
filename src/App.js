@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    let localUser = sessionStorage.get('localUser');
+    let localUser = sessionStorage.getItem('localUser');
     if (localUser) setUser(localUser);
   }, []);
 
@@ -27,7 +27,7 @@ function App() {
   const signin = () => {
     auth.signInWithPopup(provider).then((result) => {
 		setUser(result.user);
-		sessionStorage.set('localUser', result.user);
+		sessionStorage.setItem('localUser', result.user);
 	}).catch((err) => alert(err.message));
   };
 

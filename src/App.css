@@ -72,9 +72,12 @@ height: 1.5rem;
  height: 10rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
+border: 2px solid #7a7a7a;
  }
  textarea:focus {
    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.15);
+border: 2px solid #fff;
+background: rgba(0,0,0,0.1);
 }
  textarea::-webkit-scrollbar {
 display: none;

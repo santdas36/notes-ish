@@ -50,7 +50,7 @@ font-size: 1.5rem;
  .note__time {
  margin: 0;
  margin-top: 2rem;
-font-size: 0.8rem;
+font-size: 0.85rem;
 margin: 0;
 font-color: #4a4a4a;
  } 
@@ -58,7 +58,7 @@ font-color: #4a4a4a;
 margin-right: 0.33rem;
 }
 .note__content {
-font-size: 1.15rem;
+font-size: 1rem;
 margin-bottom: 1rem;
 }
 @media (min-width: 600px) {
@@ -70,5 +70,8 @@ padding: 5rem 2rem 1rem 2rem;
  .note:nth-child(even) {
 margin-left: 1rem;
 margin-right: 0;
+}
+.note__content {
+font-size: 1.15rem;
 }
 }

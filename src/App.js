@@ -4,18 +4,13 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
-import resizeGridItem from "./grid";
+import Masonary from "react-masonary-css";
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
   const [titleVal, setTitleVal] = useState('');
   const [user, setUser] = useState(null);
-
-	useEffect(() => {
-		let gridItems = document.querySelectorAll(".note");
-		gridItems.forEach((item) => {if (item) resizeGridItem(item)});
-	}, [notes]);
 
   useEffect(() => {
     let localUser = localStorage.getItem('localUser');
@@ -70,11 +65,16 @@ function App() {
 				<button className="app__submit" onClick={handleAdd} type="submit">Add to Notes</button>
 			</form>
 		</div>
-		<div className="app__notes">
-		{ notes?.map((note) => (
-			<Note uid={user.uid} id={note.id} note={note.data} />
-		))}
-		</div>
+		<Masonry
+  			breakpointCols={{default: 2, 480: 1}}
+ 			className="app__notes"
+ 			columnClassName="app__notes-column">
+
+				{ notes?.map((note) => (
+					<Note uid={user.uid} id={note.id} note={note.data} />
+				))}
+
+		</Masonary>
     </div> )
 	: (
 	<div className="login">

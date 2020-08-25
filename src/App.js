@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
 	masonry(".app__note", ".note", 30, 2, 2, 1);
-  });
+  }, []);
 
   useEffect(() => {
     let localUser = localStorage.getItem('localUser');

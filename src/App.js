@@ -65,9 +65,9 @@ function App() {
 			</form>
 		</div>
 		<div className="app__notes">
-				{ notes?.map((note) => (
-					<Note uid={user.uid} id={note.id} note={note.data} />
-				))}
+			{ notes?.map((note) => (
+				<Note uid={user.uid} id={note.id} note={note.data} />
+			))}
 		</div>
     </div> )
 	: (

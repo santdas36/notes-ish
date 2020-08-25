@@ -25,7 +25,7 @@ function Note({ note, uid, id }) {
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
-				{note.title && (<h2 className="note__title" contenteditable={editable}>{note.title}</h2>)}
+				{note.title ? (<h2 className="note__title" contenteditable={editable}>{note.title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
 				<p className="note__content" contenteditable={editable}>{note.note}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>

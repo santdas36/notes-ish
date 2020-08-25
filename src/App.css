@@ -31,6 +31,7 @@ height: 1.5rem;
  .app__notes {
  display: flex;
   flex-flow: row wrap;
+align-content: flex-start;
  }
 
  textarea, input, button {

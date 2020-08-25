@@ -72,7 +72,14 @@ position: absolute;
 width: calc(100% - 2rem);
 left: 50%;
 top: 3rem;
-transform: translateX(-50%);
+transform: translate(-50%, -50%);
+opacity: 0;
+pointer-events: none;
+}
+.input-expand {
+opacity: 1;
+transform: translate(-50%, 0);
+pointer-events: auto;
 }
  textarea {
  padding: 0;

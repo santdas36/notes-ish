@@ -9,6 +9,7 @@ function Note({ note, uid, id }) {
 	const [popIn, setPopIn] = useState(false);
 	const [title, setTitle] = useState(note.title);
 	const [content, setContent] = useState(note.note);
+	const pInput = useRef(null);
 
 	console.log('yo >>>',editable);
 	const handleDelete = () => {
@@ -35,7 +36,7 @@ function Note({ note, uid, id }) {
 			</div>
 			<div className="note__body">
 				{note.title ? (<h2 className="note__title" contenteditable={editable}>{title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
-				<p ref={ref} className="note__content" contenteditable={editable}>{content}</p>
+				<p ref={pInput} className="note__content" contenteditable={editable}>{content}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" unmountOnExit>

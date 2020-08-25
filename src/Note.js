@@ -25,8 +25,8 @@ function Note({ note, uid, id }) {
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
-				<h2 className="note__title" contenteditable={editable}>{note.note}</h2>
-				<p className="note__content" contenteditable={editable}>note</p>
+				{note.title && '<h2 className="note__title" contenteditable={editable}>{note.title}</h2>'}
+				<p className="note__content" contenteditable={editable}>{note.note}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" unmountOnExit>

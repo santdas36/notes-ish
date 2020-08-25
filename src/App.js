@@ -4,7 +4,6 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
-import Masonry from "react-masonry-css";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -65,16 +64,11 @@ function App() {
 				<button className="app__submit" onClick={handleAdd} type="submit">Add to Notes</button>
 			</form>
 		</div>
-		<Masonry
-  			breakpointCols={{default: 2, 600: 1}}
- 			className="app__notes"
- 			columnClassName="app__notes-column">
-
+		<div className="app__notes">
 				{ notes?.map((note) => (
 					<Note uid={user.uid} id={note.id} note={note.data} />
 				))}
-
-		</Masonry>
+		</div>
     </div> )
 	: (
 	<div className="login">

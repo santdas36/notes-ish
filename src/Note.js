@@ -27,7 +27,7 @@ function Note({ note, uid, id }) {
 				<p className="note__content" contenteditable={editable}>note</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
-			{editable && 
+			{editable ==='true' && 
 			(<CSSTransition in={editable} timeout={200} classNames="footerTransition">
 				<div className="note__footer">
 					<button className="note__save" onClick={handleSave}>Save</button>

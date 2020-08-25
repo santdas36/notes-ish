@@ -7,7 +7,7 @@
  box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
  border: 2px solid #7a7a7a;
  transition: all 0.2s ease-in;
- margin: 0 0 2rem 0;
+ margin: 0 0 30px 0;
  }
   .note:hover {
    box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.33);
@@ -70,11 +70,11 @@ overflow-wrap: break-word;
 @media (min-width: 600px) {
 .note {
 padding: 5rem 2rem 1rem 2rem;
-flex: 0 0 calc(50% - 2rem);
-margin-left: 2rem;
+flex: 0 0 calc(50% - 30px);
+margin-left: 30px;
 }
 /*.note:nth-child(even) {
-margin-left: 1rem;
+margin-left: 30px;
 margin-right: 0;
 }*/
 .note__content {

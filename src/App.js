@@ -4,6 +4,7 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
+import masonry from "./masonry";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -12,8 +13,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-	
-  }, [notes]);
+	masonry(".app__note", ".note", 30, 2, 2, 1);
+  });
 
   useEffect(() => {
     let localUser = localStorage.getItem('localUser');

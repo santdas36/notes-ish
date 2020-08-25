@@ -4,12 +4,18 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
+import resizeGridItem from "./grid";
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [inputVal, setInputVal] = useState('');
   const [titleVal, setTitleVal] = useState('');
   const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		let gridItems = document.querySelectorAll(".note");
+		gridItems.forEach((item) => resizeGridItem(item));
+	}, [notes]);
 
   useEffect(() => {
     let localUser = localStorage.getItem('localUser');

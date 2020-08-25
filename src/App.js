@@ -66,7 +66,7 @@ function App() {
 			</form>
 		</div>
 		<Masonry
-  			breakpointCols={2}
+  			breakpointCols={{default: 2, 600: 1}}
  			className="app__notes"
  			columnClassName="app__notes-column">
 

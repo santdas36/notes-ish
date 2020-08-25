@@ -21,7 +21,7 @@ function Note({ note, uid, id }) {
 	return (
 		<div className={"note " + (editable === 'true' ? 'isEditable' : "")}>
 			<div className="note__header">
-				<button className="note__edit" onClick={() => setEditable("true")}>Edit</button>
+				<button className="note__edit" onClick={() => {setEditable("true"); setIn(true);}}>Edit</button>
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">

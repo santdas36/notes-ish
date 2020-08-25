@@ -30,7 +30,8 @@ height: 1.5rem;
  }
  .app__notes {
 display: flex;
-flex-flow: row wrap;
+flex-flow: column wrap;
+width: 100%;
  }
  textarea, input, button {
  background: rgba(255, 255, 255, 0.1);

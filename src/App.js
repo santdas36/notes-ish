@@ -59,8 +59,8 @@ function App() {
 		</div>
 		<div className="app__input">
 			<form>
-				<input type="text" value={titleVal} onChange={(event) => (setTitleVal(event.target.value))} placeholder="Add a title" />
-				<textarea value={inputVal} onChange={(event) => (setInputVal(event.target.value))} placeholder="Write here..."></textarea>
+				<input className={inputVal && "input-expand"} type="text" value={titleVal} onChange={(event) => (setTitleVal(event.target.value))} placeholder="Add a title" />
+				<textarea className={inputVal && "textarea-expand"} value={inputVal} onChange={(event) => (setInputVal(event.target.value))} placeholder="Write here..."></textarea>
 				<button className="app__submit" onClick={handleAdd} type="submit">Add to Notes</button>
 			</form>
 		</div>

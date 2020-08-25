@@ -89,7 +89,7 @@ pointer-events: auto;
  border-right: 1.5rem solid transparent;
  font-size: 1rem;
  resize: none;
- height: 10rem;
+ height: 8rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15), 0 0 0 2px #7a7a7a;
 width: calc(100% - 4px);
@@ -97,7 +97,7 @@ margin: 0 auto;
  }
 .textarea-expand {
 border-top: 5rem solid transparent;
-    height: 15rem;
+    height: 12rem;
 }
  textarea:focus {
    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.15), 0 0 0 2px rgba(255,255,255,0.2);

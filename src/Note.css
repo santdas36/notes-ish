@@ -27,11 +27,11 @@ background-color: rgba(0,0,0, 0.1);
  bottom: 1rem;
 transition: all 0.2s ease;
  }
-.note__footer-enter .note__footer-exit-active {
+.footerTransition-enter .footerTransition-exit-active {
 transform: scale(0.5);
 opacity: 0;
 }
-.note__footer-enter-active, .note__footer-exit {
+.footerTransition-enter-active, .footerTransition-exit {
 transform: scale(1);
 opacity: 1;
 }

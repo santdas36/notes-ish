@@ -7,7 +7,9 @@ import { CSSTransition } from "react-transition-group";
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
-	const [title, setTitle] = useState('');
+	const [title, setTitle] = useState(note.title);
+	const [content, setContent] = useState(note.note);
+
 	console.log('yo >>>',editable);
 	const handleDelete = () => {
 		db.collection('users').doc(uid).collection('notes').doc(id).delete();
@@ -18,6 +20,13 @@ function Note({ note, uid, id }) {
 		setPopIn(false);
 	}
 
+	const handleEdit = () => {
+		db.collection('users').doc(uid).collection('notes').doc(id).set({
+			title: newTitle,
+			note: newNote
+		}, {merge: true});
+	}
+
 	return (
 		<div className={"note " + (editable === 'true' ? 'isEditable' : "")}>
 			<div className="note__header">
@@ -25,8 +34,8 @@ function Note({ note, uid, id }) {
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
-				{note.title ? (<h2 className="note__title" contenteditable={editable}>{note.title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
-				<p className="note__content" contenteditable={editable}>{note.note}</p>
+				{note.title ? (<h2 className="note__title" contenteditable={editable}>{title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
+				<p ref={ref} className="note__content" contenteditable={editable}>{content}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" unmountOnExit>

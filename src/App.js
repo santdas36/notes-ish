@@ -43,6 +43,7 @@ function App() {
 		setInputVal('');
 		console.log(user);
     		db.collection('users').doc(user.uid).collection('notes').add({
+			title: titleVal,
       		note: inputVal,
 			time: firebase.firestore.FieldValue.serverTimestamp(),
     		});

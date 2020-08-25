@@ -69,13 +69,14 @@ line-height: 1.4;
 overflow-wrap: break-word;
 }
 @media (min-width: 600px) {
-  .note {
+.note {
 padding: 5rem 2rem 1rem 2rem;
 flex: 0 0 calc(50% - 1rem);
 margin-right: 1rem;
 }
 .note:nth-child(even) {
 margin-left: 1rem;
+margin-right: 0;
 }
 .note__content {
 font-size: 1.12rem;

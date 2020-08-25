@@ -14,7 +14,7 @@ function App() {
 
 	useEffect(() => {
 		let gridItems = document.querySelectorAll(".note");
-		gridItems?.forEach((item) => resizeGridItem(item));
+		gridItems.forEach((item) => {if (item) resizeGridItem(item)});
 	}, [notes]);
 
   useEffect(() => {

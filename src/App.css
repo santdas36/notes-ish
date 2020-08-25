@@ -4,7 +4,7 @@ place-items: center;
 padding: 3rem;
 }
 .login__button {
-font-size: 1.2rem;
+font-size: 1.2rem !important;
 padding: 0.66rem 1.33rem;
 }
 .app {
@@ -42,6 +42,7 @@ height: 1.5rem;
  outline: none !important;
   box-shadow: 0 1rem 1rem -0.5rem rgba(0,0,0,0.15);
   transition: all 0.2s ease-in-out;
+font-size: 0.85rem;
  }
   .app__submit {
  background: rgba(255, 255, 255, 0.2);
@@ -79,7 +80,7 @@ transform: translateX(-50%);
  border-bottom: 1.5rem solid transparent;
  border-left: 1.5rem solid transparent;
  border-right: 1.5rem solid transparent;
- font-size: 1.12rem;
+ font-size: 1rem;
  resize: none;
  height: 10rem;
   border-radius: 1rem;

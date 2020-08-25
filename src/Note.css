@@ -1,5 +1,5 @@
 .note {
- flex: 100%;
+ flex: 0 0 100%;
  padding: 5rem 1.5rem 1.5rem 1.5rem;
  margin-bottom: 2rem;
  background-color: rgba(255,255,255,0.1);
@@ -60,7 +60,7 @@ font-size: 1.15rem;
 }
 @media (min-width: 600px) {
   .note {
-flex: calc(50% - 1rem);
+flex: 0 0 calc(50% - 1rem);
 margin-right: 1rem;
 padding: 5rem 2rem 1rem 2rem;
 }

@@ -25,7 +25,17 @@ background-color: rgba(0,0,0, 0.1);
   position: absolute;
  right: 1rem;
  bottom: 1rem;
+transition: all 0.2s ease;
  }
+.note__footer-enter .note__footer-exit-active {
+transform: scale(0.5);
+opacity: 0;
+}
+.note__footer-enter-active, .note__footer-exit {
+transform: scale(1);
+opacity: 1;
+}
+
  .note__time {
  margin: 0;
  margin-top: 2rem;

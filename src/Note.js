@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 import db from "./firebase";
+import CSSTransition from "react-transition-group";
 
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState("false");

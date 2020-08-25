@@ -4,7 +4,7 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
-import Masonary from "react-masonary-css";
+import Masonry from "react-masonry-css";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -74,7 +74,7 @@ function App() {
 					<Note uid={user.uid} id={note.id} note={note.data} />
 				))}
 
-		</Masonary>
+		</Masonry>
     </div> )
 	: (
 	<div className="login">

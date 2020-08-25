@@ -6,6 +6,7 @@ import { CSSTransition } from "react-transition-group";
 
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState("false");
+	const [showFooter, setShowFooter] = useState(false);
 	const [title, setTitle] = useState('');
 	console.log('yo >>>',editable);
 	const handleDelete = () => {
@@ -14,12 +15,13 @@ function Note({ note, uid, id }) {
 
 	const handleSave = () => {
 		setEditable("false");
+		setShowFooter(false);
 	}
 
 	return (
 		<div className={"note " + (editable === 'true' ? 'isEditable' : "")}>
 			<div className="note__header">
-				<button className="note__edit" onClick={() => setEditable("true")}>Edit</button>
+				<button className="note__edit" onClick={() => {setEditable("true"); setShowFooter(true)}}>Edit</button>
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
@@ -27,7 +29,7 @@ function Note({ note, uid, id }) {
 				<p className="note__content" contenteditable={editable}>note</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
-			<CSSTransition in={editable} timeout={200} classNames="note__footer"> 
+			<CSSTransition in={showFooter} timeout={200} classNames="note__footer"> 
 				<button className="note__save" onClick={handleSave}>Save</button>
 			</CSSTransition> 
 		</div>	

@@ -22,8 +22,8 @@ function Note({ note, uid, id }) {
 
 	const handleEdit = () => {
 		db.collection('users').doc(uid).collection('notes').doc(id).set({
-			title: newTitle,
-			note: newNote
+			title: title,
+			note: content
 		}, {merge: true});
 	}
 

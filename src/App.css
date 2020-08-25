@@ -118,4 +118,7 @@ width: 28rem;
 width: 10rem;
 align-self: center;
 }
+textarea, input {
+font-size: 1.12rem
+}
  }

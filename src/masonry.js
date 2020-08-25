@@ -4,7 +4,7 @@ const masonry = (grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) => {
       gcLength = gc.length,
       gHeight = 0,
       i; // Loop counter
-  
+  console.log(g,gc,gcLength);
   for(i=0; i<gcLength; ++i) {
     gHeight+=gc[i].offsetHeight+parseInt(gridGutter);
   }

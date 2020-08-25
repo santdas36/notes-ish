@@ -4,6 +4,7 @@ import "./bootstrap-reboot.css";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import "./grid.js";
 
 ReactDOM.render(
   <React.StrictMode>

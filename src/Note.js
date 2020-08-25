@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 import db from "./firebase";

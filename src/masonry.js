@@ -16,6 +16,8 @@ const masonry = (grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) => {
   } else {
     g.style.height = gHeight/mGridCol + gHeight/(gcLength+1) + "px";
   }
+
+return true;
 }
 
 export default masonry;

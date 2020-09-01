@@ -16,7 +16,6 @@ function Note({ note, uid, id }) {
 		setContent(note.note);
 	}, [note]);
 
-	console.log('yo >>>',editable);
 	const handleDelete = () => {
 		db.collection('users').doc(uid).collection('notes').doc(id).delete();
 	}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+import logo from "./assets/logo.svg";
+import avatar from "./assets/user.png";
 import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
@@ -20,7 +21,6 @@ function App() {
     if (user) {
     	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
 		setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
-		console.log(snapshot.docs[0].data());
       });
     }
   }, [user]);
@@ -40,13 +40,13 @@ function App() {
   const handleAdd = (event) => {
 	event.preventDefault();
 	if (inputVal && user) {
-		setInputVal('');
-		console.log(user);
     		db.collection('users').doc(user.uid).collection('notes').add({
 			title: titleVal,
       		note: inputVal,
 			time: firebase.firestore.FieldValue.serverTimestamp(),
     		});
+		setInputVal('');
+		setTitleVal('');
 	}
   }
   return (
@@ -55,7 +55,9 @@ function App() {
 	<div className="app">
     		<div className="app__header">
 			<img src={logo} className="app__logo" />
-			<div onClick={signout} className="app__avatar"></div>
+			<div onClick={signout} className="app__avatar">
+				<img url={user.photoURL || avatar} alt="userAvatar" />
+			</div>
 		</div>
 		<div className="app__input">
 			<form>

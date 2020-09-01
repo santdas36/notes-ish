@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 import db from "./firebase";
 import { CSSTransition } from "react-transition-group";
 
-function Note({ note, uid, id }) {
+const Note = forwardRef(({ note, uid, id }, ref) => {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
 	const noteInput = useRef(null);
@@ -19,8 +19,6 @@ function Note({ note, uid, id }) {
 		setPopIn(true);
 		setTimeout(() => {
 			titleInput.current.focus();
-			titleInput.current.selectionStart = titleInput.current.innerText.length;
-			titleInput.current.selectionEnd = titleInput.current.innerText.length; 
 		}, 10);
 	}
 
@@ -49,6 +47,6 @@ function Note({ note, uid, id }) {
 			</CSSTransition>
 		</div>	
 	);
-}
+});
 
 export default Note;

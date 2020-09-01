@@ -5,6 +5,7 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
+import FlipMove from 'react-flip-move';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -67,9 +68,11 @@ function App() {
 			</form>
 		</div>
 		<div className="app__notes">
-			{ notes?.map((note) => (
-				<Note uid={user.uid} id={note.id} note={note.data} />
-			))}
+			<FlipMove>
+				{ notes?.map((note) => (
+					<Note uid={user.uid} id={note.id} key={note.id} note={note.data} />
+				))}
+			</FlipMove>
 		</div>
     </div> )
 	: (

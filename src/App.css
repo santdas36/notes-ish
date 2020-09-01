@@ -14,7 +14,7 @@ padding-bottom: 5rem;
  overflow-y: scroll;
 }
 .app__logo {
-height: 2rem;
+height: 1.75rem;
 }
  .app__header{
  display: flex;
@@ -121,7 +121,7 @@ display: none;
  }
 @media (min-width: 600px) {
 .app__logo {
-height: 2.25rem;
+height: 2rem;
 }
  .app__avatar {
  width: 3rem;

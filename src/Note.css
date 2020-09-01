@@ -15,7 +15,6 @@
 .note.isEditable {
 border: 2px solid rgba(255,255,255,0.2);
 background-color: rgba(0,0,0, 0.1);
-word-wrap: break-word;
 }
  .note__header {
  position: absolute;
@@ -47,14 +46,16 @@ transition: all 0.2s;
 }
 .note__title {
 font-size: 1.5rem;
-word-wrap: break-word;
+word-wrap: anywhere;
+overflow-wrap: anywhere;
+white-space: break-spaces;
 width: 100%;
 }
 .note__title.addtitle {
 opacity: 0.15;
 }
 .note__title.addtitle[contenteditable="true"] {
-opacity: 0.5;
+opacity: 0.75;
 }
  .note__time {
  margin: 0;
@@ -68,7 +69,9 @@ margin-right: 0.33rem;
 }
 .note__content {
 line-height: 1.4;
-word-wrap: break-word;
+word-wrap: anywhere;
+overflow-wrap: anywhere;
+white-space: break-spaces;
 width: 100%;
 }
 @media (min-width: 600px) {

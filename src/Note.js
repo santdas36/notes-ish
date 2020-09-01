@@ -17,7 +17,10 @@ function Note({ note, uid, id }) {
 	const handleEdit = () => {
 		setEditable("true");
 		setPopIn(true);
-		setTimeout(() => titleInput.current.focus(), 50);
+		setTimeout(() => {
+			titleInput.current.focus();
+			titleInput.current.innerText = titleInput.current.innerText;
+		}, 10);
 	}
 
 	const handleSave = () => {

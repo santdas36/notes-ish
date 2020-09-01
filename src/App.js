@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     if (user) {
+	console.log(user);
     	db.collection('users').doc(user.uid).collection('notes').orderBy('time', 'desc').onSnapshot((snapshot) => {
 		setNotes(snapshot.docs.map((doc) => ({id: doc.id, data: doc.data()})));
       });
@@ -57,6 +58,7 @@ function App() {
     		<div className="app__header">
 			<img src={logo} className="app__logo" />
 			<div onClick={signout} className="app__avatar">
+				<div><h6>{user.display_name}</h6><p>SignOut</p></div>
 				<img src={user.photoURL || avatar} alt="userAvatar" />
 			</div>
 		</div>

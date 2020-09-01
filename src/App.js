@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "./assets/logo.svg";
+import { ReactComponent as Logo } from './assets/logo.svg';
 import avatar from "./assets/user.png";
 import "./App.css";
 import Note from "./Note";
@@ -55,7 +55,7 @@ function App() {
    {user ? (
 	<div className="app">
     		<div className="app__header">
-			<img src={logo} className="app__logo" />
+			<Logo className="app__logo" />
 			<div onClick={signout} className="app__avatar">
 				<div><h6>{user.displayName}</h6><p>Sign Out</p></div>
 				<img src={user.photoURL || avatar} alt="userAvatar" />

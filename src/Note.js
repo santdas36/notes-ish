@@ -4,7 +4,6 @@ import formatTime from "./formatTime.js";
 import db from "./firebase";
 import { CSSTransition } from "react-transition-group";
 
-const Note = forwardRef(({ note, uid, id }, ref) => {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
 	const noteInput = useRef(null);
@@ -31,7 +30,7 @@ const Note = forwardRef(({ note, uid, id }, ref) => {
 		}, {merge: true});
 	}
 
-	return (
+	const Note = forwardRef(({ note, uid, id }, ref) => (
 		<div className={"note " + (editable === 'true' ? 'isEditable' : "")}>
 			<div className="note__header">
 				<button className="note__edit" onClick={handleEdit}>Edit</button>
@@ -46,7 +45,6 @@ const Note = forwardRef(({ note, uid, id }, ref) => {
 				<button className="note__save" onClick={handleSave}>Save</button>
 			</CSSTransition>
 		</div>	
-	);
-});
+	));
 
 export default Note;

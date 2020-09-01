@@ -26,11 +26,11 @@ background-color: rgba(0,0,0, 0.1);
  right: 1rem;
  bottom: 1rem;
  }
-.footerTransition-enter {
+.footerTransition-enter, .footerTransition-appear-active {
 opacity: 0;
 transform: scale(0.5);
 }
-.footerTransition-enter-active {
+.footerTransition-enter-active, .footerTransition-appear-active {
 opacity: 1;
 transform: scale(1);
 transition: all 0.2s;
@@ -49,8 +49,9 @@ font-size: 1.5rem;
 word-wrap: anywhere;
 overflow-wrap: anywhere;
 white-space: break-spaces;
-width: 100%;
+width: calc(100% + 0.5rem);
 padding: 0.5rem;
+margin-left: -0.5rem;
 margin-bottom: 0;
 }
 .note__title.addtitle {
@@ -74,8 +75,10 @@ line-height: 1.4;
 word-wrap: anywhere;
 overflow-wrap: anywhere;
 white-space: break-spaces;
-width: 100%;
+width: calc(100% + 0.5rem);
 padding: 0.5rem;
+margin-left: -0.5rem;
+margin-top: -0.5rem;
 }
 @media (min-width: 600px) {
 .note {

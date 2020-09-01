@@ -13,19 +13,24 @@ margin: 0 auto;
 padding-bottom: 5rem;
  overflow-y: scroll;
 }
-.app__logo {
-height: 2.25rem;
-width: auto;
-}
-.app__logo #notes {
-display: none;
-}
  .app__header{
  display: flex;
  align-items: center;
  justify-content: space-between;
  padding-bottom: 1.5rem;
+margin-left: auto;
+position: relative;
  }
+.app__logo {
+height: 100%;
+width: auto;
+position: absolute;
+left: 0;
+top: 0;
+}
+.app__logo #notes {
+display: none;
+}
  .app__avatar {
  background: rgba(255, 255, 255, 0.1);
  border-radius: 99px;
@@ -141,6 +146,9 @@ display: none;
 @media (min-width: 600px) {
 .app__logo {
 height: 2rem;
+position: relative;
+left: auto;
+top: auto;
 }
 .app__logo #notes {
 display: inline;

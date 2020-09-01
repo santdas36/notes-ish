@@ -33,8 +33,8 @@ function Note({ note, uid, id }) {
 	}
 
 	return (
-		<div className={`note (editable === 'true' && 'isEditable') (hovered && 'hovered')`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-			<CSSTransition in={hovered} timeout={200} classNames="footerTransition" unmountOnExit>
+		<div className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+			<CSSTransition in={hovered || popIn} timeout={200} classNames="footerTransition" unmountOnExit>
 				<div className="note__header">
 					<button className="note__edit" onClick={handleEdit}>Edit</button>
 					<button className="note__delete" onClick={handleDelete}>Delete</button>

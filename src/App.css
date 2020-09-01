@@ -21,7 +21,8 @@ padding-bottom: 5rem;
 position: relative;
  }
 .app__logo {
-height: calc(100% - 1.5rem);
+height: calc(100% - 2rem);
+padding-top: 0.25rem;
 width: auto;
 position: absolute;
 left: 0;
@@ -149,6 +150,7 @@ height: 2rem;
 position: relative;
 left: auto;
 top: auto;
+padding-top: 0;
 }
 .app__logo #notes {
 display: inline;

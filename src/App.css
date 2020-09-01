@@ -15,6 +15,7 @@ padding-bottom: 5rem;
 }
 .app__logo {
 height: 2.25rem;
+width: auto;
 }
 .app__logo #notes {
 display: none;

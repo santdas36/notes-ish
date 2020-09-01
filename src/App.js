@@ -56,7 +56,7 @@ function App() {
     		<div className="app__header">
 			<img src={logo} className="app__logo" />
 			<div onClick={signout} className="app__avatar">
-				<img url={user.photoURL || avatar} alt="userAvatar" />
+				<img src={user.photoURL || avatar} alt="userAvatar" />
 			</div>
 		</div>
 		<div className="app__input">

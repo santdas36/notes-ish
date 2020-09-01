@@ -19,7 +19,8 @@ function Note({ note, uid, id }) {
 		setPopIn(true);
 		setTimeout(() => {
 			titleInput.current.focus();
-			titleInput.current.innerText = titleInput.current.innerText;
+			titleInput.current.selectionStart = titleInput.current.innerText.length;
+			titleInput.current.selectionEnd = titleInput.current.innerText.length; 
 		}, 10);
 	}
 

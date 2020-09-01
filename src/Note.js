@@ -7,6 +7,7 @@ import { CSSTransition } from "react-transition-group";
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
+	const [hovered, setHovered] = useState(false);
 	const noteInput = useRef(null);
 	const titleInput = useRef(null);
 
@@ -32,17 +33,19 @@ function Note({ note, uid, id }) {
 	}
 
 	return (
-		<div className={"note " + (editable === 'true' ? 'isEditable' : "")}>
-			<div className="note__header">
-				<button className="note__edit" onClick={handleEdit}>Edit</button>
-				<button className="note__delete" onClick={handleDelete}>Delete</button>
-			</div>
+		<div className={`note (editable === 'true' && 'isEditable') (hovered && 'hovered')`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+			<CSSTransition in={hovered} timeout={200} classNames="footerTransition" unmountOnExit>
+				<div className="note__header">
+					<button className="note__edit" onClick={handleEdit}>Edit</button>
+					<button className="note__delete" onClick={handleDelete}>Delete</button>
+				</div>
+			</CSSTransition>
 			<div className="note__body">
 				{note.title ? (<h2 ref={titleInput} className="note__title" contenteditable={editable}>{note.title}</h2>) : (<h2 ref={titleInput} className="note__title addtitle" contenteditable={editable} onClick={handleEdit}>Add a title</h2>) }
 				<p ref={noteInput} className="note__content" contenteditable={editable}>{note.note}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
-			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" unmountOnExit>
+			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" mountOnEnter unmountOnExit>
 				<button className="note__save" onClick={handleSave}>Save</button>
 			</CSSTransition>
 		</div>	

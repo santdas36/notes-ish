@@ -17,7 +17,7 @@ function Note({ note, uid, id }) {
 	const handleEdit = () => {
 		setEditable("true");
 		setPopIn(true);
-		titleInput.current.focus();
+		setTimeout(() => titleInput.current.focus(), 50);
 	}
 
 	const handleSave = () => {

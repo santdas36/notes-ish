@@ -13,8 +13,9 @@
    box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.33);
 }
 .note.isEditable {
-border: 2px solid rgba(255,255,255,0.2);;
+border: 2px solid rgba(255,255,255,0.2);
 background-color: rgba(0,0,0, 0.1);
+word-wrap: break-word;
 }
  .note__header {
  position: absolute;

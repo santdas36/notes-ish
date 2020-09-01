@@ -7,9 +7,14 @@ import { CSSTransition } from "react-transition-group";
 function Note({ note, uid, id }) {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
-	const [title, setTitle] = useState(note.title);
-	const [content, setContent] = useState(note.note);
+	const [title, setTitle] = useState('');
+	const [content, setContent] = useState('');
 	const pInput = useRef(null);
+
+	useEffect(() => {
+		setTitle(note.title);
+		setContent(note.note);
+	}, [note]);
 
 	console.log('yo >>>',editable);
 	const handleDelete = () => {

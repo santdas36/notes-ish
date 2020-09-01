@@ -5,7 +5,7 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
-import FlipMove from 'react-flip-move';
+import { CSSTransition } from "react-transition-group";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -68,11 +68,11 @@ function App() {
 			</form>
 		</div>
 		<div className="app__notes">
-			<FlipMove typeName={null} appearAnimation="fade" enterAnimation="fade">
+			<CSSTransition in={true} appear={true} timeout={200} classNames="footerTransition">
 				{ notes?.map((note) => (
 					<Note uid={user.uid} id={note.id} key={note.id} note={note.data} />
 				))}
-			</FlipMove>
+			</CSSTransition>
 		</div>
     </div> )
 	: (

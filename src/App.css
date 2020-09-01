@@ -18,11 +18,10 @@ padding-bottom: 5rem;
  align-items: center;
  justify-content: space-between;
  padding-bottom: 1.5rem;
-margin-left: auto;
 position: relative;
  }
 .app__logo {
-height: 100%;
+height: calc(100% - 1.5rem);
 width: auto;
 position: absolute;
 left: 0;
@@ -39,6 +38,7 @@ padding: 0.25rem 0.25rem 0.25rem 1.5rem;
 display: flex;
 align-items: center;
 cursor: pointer;
+margin-left: auto;
  }
 .app__avatar div > * {
 margin: 0;

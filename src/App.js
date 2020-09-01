@@ -5,7 +5,6 @@ import "./App.css";
 import Note from "./Note";
 import firebase from "firebase";
 import db, { auth, provider } from "./firebase";
-import { CSSTransition } from "react-transition-group";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -71,9 +70,7 @@ function App() {
 		</div>
 		<div className="app__notes">
 				{ notes?.map((note) => (
-					<CSSTransition in={true} appear={true} timeout={300} classNames="footerTransition">
-						<Note uid={user.uid} id={note.id} note={note.data} />
-					</CSSTransition>
+					<Note uid={user.uid} id={note.id} note={note.data} />
 				))}
 		</div>
     </div> )

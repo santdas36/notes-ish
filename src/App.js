@@ -68,11 +68,11 @@ function App() {
 			</form>
 		</div>
 		<div className="app__notes">
-			<CSSTransition in={true} appear={true} timeout={200} classNames="footerTransition">
 				{ notes?.map((note) => (
-					<Note uid={user.uid} id={note.id} key={note.id} note={note.data} />
+					<CSSTransition in={true} appear={true} timeout={200} classNames="footerTransition">
+						<Note uid={user.uid} id={note.id} key={note.id} note={note.data} />
+					</CSSTransition>
 				))}
-			</CSSTransition>
 		</div>
     </div> )
 	: (

@@ -21,6 +21,7 @@ height: 1.75rem;
  align-items: center;
  justify-content: space-between;
  padding-bottom: 1.5rem;
+flex-flow: row wrap;
  }
  .app__avatar {
  background: rgba(255, 255, 255, 0.1);
@@ -49,7 +50,7 @@ width: 2.25rem;
 height: 2.25rem;
 border-radius: 99px;
 object-fit: contain;
-margin-left: 0.25rem;
+margin-left: 1.5rem;
 }
  .app__notes {
 display: flex;

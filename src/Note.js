@@ -39,8 +39,8 @@ function Note({ note, uid, id }) {
 				<button className="note__delete" onClick={handleDelete}>Delete</button>
 			</div>
 			<div className="note__body">
-				{note.title ? (<h2 className="note__title" contenteditable={editable}>{title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
-				<p ref={pInput} className="note__content" contenteditable={editable}>{content}</p>
+				{note.title ? (<h2 className="note__title" contenteditable={editable} onChange={(e) => setTitle(e.target.innerHTML)}>{title}</h2>) : (<h2 className="note__title addtitle" contenteditable={editable}>Add a title</h2>) }
+				<p ref={pInput} className="note__content" contenteditable={editable} onChange={(e) => setContent(e.target.innerHTML)}>{content}</p>
 				<p className="note__time">{ note.time && formatTime('%l:%M%P - %b %d', new Date(note.time.toDate())) }</p>
 			</div>
 			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" unmountOnExit>

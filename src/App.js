@@ -76,6 +76,8 @@ function App() {
     </div> )
 	: (
 	<div className="login">
+		<h2>Never forget a thing again.</h2>
+		<p>With Notes, take notes of anything and everything in your daily life, and make it available on all of your devices simultaneously. Just Login to continue.</p>
 		<button onClick={signin}>Sign In with Google</button>
 	</div>
 	)}

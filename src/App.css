@@ -3,6 +3,13 @@ display: grid;
 place-items: center;
 padding: 3rem;
 }
+.login h2, .login p {
+max-width: 480px;
+width: 100%;
+}
+.login p {
+padding-bottom: 3rem;
+}
 .login__button {
 font-size: 1.2rem !important;
 padding: 0.66rem 1.33rem;

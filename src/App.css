@@ -1,7 +1,7 @@
 .login {
 display: grid;
 place-items: center;
-padding: 3rem;
+padding: 3rem 0;
 }
 .login h2, .login p {
 max-width: 480px;

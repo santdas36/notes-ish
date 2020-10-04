@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FlipMove from 'react-flip-move';
+import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as Logo } from './assets/logo.svg';
 import avatar from "./assets/user.png";
 import "./App.css";
@@ -71,9 +71,9 @@ function App() {
 		</div>
 		<div className="app__notes">
 				{ notes?.map((note) => (
-					<FlipMove typeName={null}>
-						<Note key={note.id} uid={user.uid} nid={note.id} note={note.data} />
-					</FlipMove>
+					<AnimatePresence>
+						<motion.Note key={note.id} initial={{ scale: 0.8, opacity: 0}} animate={{ scale: 1, opacity: 1}} exit={{ scale: 0.8, opacity: 0}} uid={user.uid} nid={note.id} note={note.data} />
+					</AnimatePresence>
 				))}
 		</div>
     </div> )

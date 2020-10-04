@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 import db from "./firebase";
 import { CSSTransition } from "react-transition-group";
 
-function Note({ note, uid, id }) {
+const Note = forwardRef(({ note, uid, id }, ref) => {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
 	const [hovered, setHovered] = useState(false);
@@ -33,7 +33,7 @@ function Note({ note, uid, id }) {
 	}
 
 	return (
-		<div className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+		<div ref={ref} className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
 			<CSSTransition in={hovered || popIn} timeout={200} classNames="footerTransition" unmountOnExit>
 				<div className="note__header">
 					<button className="note__edit" onClick={handleEdit}>Edit</button>
@@ -50,6 +50,6 @@ function Note({ note, uid, id }) {
 			</CSSTransition>
 		</div>	
 	);
-}
+});
 
 export default Note;

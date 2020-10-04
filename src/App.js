@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FlipMove from 'react-flip-move';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import avatar from "./assets/user.png";
 import "./App.css";
@@ -70,7 +71,9 @@ function App() {
 		</div>
 		<div className="app__notes">
 				{ notes?.map((note) => (
-					<Note uid={user.uid} id={note.id} note={note.data} />
+					<FlipMove typeName={null}>
+						<Note uid={user.uid} id={note.id} note={note.data} />
+					</FlipMove>
 				))}
 		</div>
     </div> )

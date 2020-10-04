@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./Note.css";
 import formatTime from "./formatTime.js";
 import db from "./firebase";
@@ -33,7 +34,7 @@ function Note({ note, uid, nid }) {
 	}
 
 	return (
-		<div className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+		<motion.div initial={{ scale: 0.8, opacity: 0}} animate={{ scale: 1, opacity: 1}} exit={{ scale: 0.8, opacity: 0}} className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
 			<CSSTransition in={hovered || popIn} timeout={200} classNames="footerTransition" unmountOnExit>
 				<div className="note__header">
 					<button className="note__edit" onClick={handleEdit}>Edit</button>
@@ -48,7 +49,7 @@ function Note({ note, uid, nid }) {
 			<CSSTransition in={popIn} timeout={200} classNames="footerTransition" mountOnEnter unmountOnExit>
 				<button className="note__save" onClick={handleSave}>Save</button>
 			</CSSTransition>
-		</div>	
+		</motion.div>	
 	);
 }
 

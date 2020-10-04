@@ -4,7 +4,7 @@ import formatTime from "./formatTime.js";
 import db from "./firebase";
 import { CSSTransition } from "react-transition-group";
 
-const Note = forwardRef(({ note, uid, id }, ref) => {
+const Note = forwardRef(({ note, uid, nid }, ref) => {
 	const [editable, setEditable] = useState("false");
 	const [popIn, setPopIn] = useState(false);
 	const [hovered, setHovered] = useState(false);
@@ -12,7 +12,7 @@ const Note = forwardRef(({ note, uid, id }, ref) => {
 	const titleInput = useRef(null);
 
 	const handleDelete = () => {
-		db.collection('users').doc(uid).collection('notes').doc(id).delete();
+		db.collection('users').doc(uid).collection('notes').doc(nid).delete();
 	}
 
 	const handleEdit = () => {
@@ -26,7 +26,7 @@ const Note = forwardRef(({ note, uid, id }, ref) => {
 	const handleSave = () => {
 		setEditable("false");
 		setPopIn(false);
-		db.collection('users').doc(uid).collection('notes').doc(id).set({
+		db.collection('users').doc(uid).collection('notes').doc(nid).set({
 			title: titleInput.current.innerText,
 			note: noteInput.current.innerText
 		}, {merge: true});

@@ -72,7 +72,7 @@ function App() {
 		<div className="app__notes">
 				{ notes?.map((note) => (
 					<FlipMove typeName={null}>
-						<Note uid={user.uid} id={note.id} note={note.data} />
+						<Note key={note.id} uid={user.uid} nid={note.id} note={note.data} />
 					</FlipMove>
 				))}
 		</div>

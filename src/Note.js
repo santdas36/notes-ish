@@ -34,7 +34,7 @@ function Note({ note, uid, nid }) {
 	}
 
 	return (
-		<motion.div initial={{ scale: 0.8, opacity: 0}} animate={{ scale: 1, opacity: 1}} exit={{ scale: 0.8, opacity: 0}} className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+		<motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className={"note " + (editable === 'true' ? 'isEditable hovered ' : "") + (hovered ? 'hovered' : "")} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
 			<CSSTransition in={hovered || popIn} timeout={200} classNames="footerTransition" unmountOnExit>
 				<div className="note__header">
 					<button className="note__edit" onClick={handleEdit}>Edit</button>
